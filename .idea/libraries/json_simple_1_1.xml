@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="json-simple-1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/test/json-simple-1.1.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/test/scribe-1.3.5.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/test/jcommander-1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

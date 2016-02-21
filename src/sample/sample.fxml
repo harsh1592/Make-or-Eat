@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="866.0"
+            prefWidth="1321.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.Controller">
+    <top>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Close"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Delete"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <HBox spacing="10.0">
+                    <children>
+                        <TextField fx:id="recipe_txt" promptText="Recipe"/>
+                        <Button fx:id="recipe_btn" mnemonicParsing="false" onAction="#OnSearchButton" prefHeight="31.0"
+                                prefWidth="186.0" text="Search Recipes"/>
+                        <Region prefHeight="31.0" prefWidth="342.0" HBox.hgrow="ALWAYS"/>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="7.0" left="7.0" right="7.0" top="7.0"/>
+                    </VBox.margin>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <left>
+        <ListView fx:id="result_list" prefHeight="444.0" prefWidth="267.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="4.0" left="4.0" right="4.0"/>
+            </BorderPane.margin>
+        </ListView>
+    </left>
+    <bottom>
+        <HBox prefHeight="33.0" prefWidth="969.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="lbl_bot" text="Label">
+                    <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                    </padding>
+                </Label>
+            </children>
+        </HBox>
+    </bottom>
+    <right>
+        <VBox prefHeight="444.0" prefWidth="192.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="city_txt" promptText="City">
+                    <VBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0"/>
+                    </VBox.margin>
+                </TextField>
+                <Button fx:id="restaurant_btn" mnemonicParsing="false" onAction="#OnReviewButton"
+                        text="Where's my FOOD">
+                    <VBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0"/>
+                    </VBox.margin>
+                </Button>
+                <ListView fx:id="restaurant_listview" prefHeight="471.0" prefWidth="160.0">
+                    <VBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0"/>
+                    </VBox.margin>
+                </ListView>
+            </children>
+        </VBox>
+    </right>
+    <center>
+        <Pane prefHeight="444.0" prefWidth="472.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="source_lbl" layoutX="353.0" layoutY="479.0" prefHeight="21.0" prefWidth="398.0"
+                       text="Reviews">
+                    <font>
+                        <Font size="17.0"/>
+                    </font>
+                </Label>
+                <ImageView fx:id="img_view" fitHeight="177.0" fitWidth="160.0" layoutX="14.0" layoutY="5.0"
+                           pickOnBounds="true" preserveRatio="true"/>
+                <Label fx:id="label_lbl" layoutX="181.0" layoutY="8.0" prefHeight="168.0" prefWidth="321.0">
+                    <font>
+                        <Font name="System Bold Italic" size="30.0"/>
+                    </font>
+                </Label>
+                <Hyperlink fx:id="url_lbl" layoutX="13.0" layoutY="192.0" prefHeight="52.0" prefWidth="485.0"/>
+                <ListView fx:id="ingri_list" layoutX="522.0" layoutY="31.0" prefHeight="438.0" prefWidth="324.0">
+                    <padding>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0"/>
+                    </padding>
+                </ListView>
+                <Label layoutX="522.0" layoutY="4.0" prefHeight="21.0" prefWidth="146.0" text="Ingredients">
+                    <font>
+                        <Font name="System Italic" size="16.0"/>
+                    </font>
+                </Label>
+                <WebView fx:id="map_view" layoutX="16.0" layoutY="479.0" prefHeight="271.0" prefWidth="329.0"/>
+                <ImageView fx:id="star_view" fitHeight="22.0" fitWidth="204.0" layoutX="190.0" layoutY="370.0"
+                           pickOnBounds="true" preserveRatio="true"/>
+                <ImageView fx:id="rest_img" fitHeight="158.0" fitWidth="163.0" layoutX="16.0" layoutY="314.0"
+                           pickOnBounds="true" preserveRatio="true"/>
+                <Label fx:id="rest_add" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="191.0" layoutY="395.0"
+                       prefHeight="45.0" prefWidth="322.0"/>
+                <Label fx:id="snippet_lbl" layoutX="353.0" layoutY="508.0" prefHeight="119.0" prefWidth="493.0">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="rest_lbl" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="190.0" layoutY="316.0"
+                       prefHeight="50.0" prefWidth="326.0">
+                    <font>
+                        <Font name="System Bold" size="22.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="phone_lbl" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="191.0" layoutY="446.0"
+                       prefHeight="26.0" prefWidth="323.0"/>
+            </children>
+        </Pane>
+    </center>
+</BorderPane>
